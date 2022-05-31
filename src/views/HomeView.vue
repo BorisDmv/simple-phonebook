@@ -28,6 +28,8 @@
 
           <button class="defaultBtn" @click="editUser()">Запази промените</button>
 
+          <button class="defaultBtn" @click="removeUser()">Изтрий потребител</button>
+
           <button class="defaultBtn" @click="closeEditModal()">Отказ</button>
 
         </div>
@@ -78,7 +80,6 @@
               <th id="two">Фамилия</th>
               <th id="three">Телефон</th>
               <th id="four">Адрес</th>
-
           </thead>
 
 
@@ -130,6 +131,13 @@ export default {
 
       this.phoneBooks.push(newUserData)
 
+      this.openedCreateModal = false
+    },
+    //Remove user
+    removeUser() {
+      this.openedEditModal = false
+
+      this.phoneBooks.splice(this.editUserIndex, 1)
     },
 
     //Loading the selected user data for edit
