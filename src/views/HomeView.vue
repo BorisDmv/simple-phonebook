@@ -95,7 +95,7 @@
         </table>
       </div>
 
-      <button class="defaultBtn" @click="this.openedCreateModal = true">Създай</button>
+      <button class="defaultBtn" @click="addtUserModal()">Създай</button>
 
 
   </div>
@@ -132,6 +132,15 @@ export default {
       this.phoneBooks.push(newUserData)
 
       this.openedCreateModal = false
+    },
+    //
+    addtUserModal(){
+       this.openedCreateModal = true
+
+       this.nameInputValue = ''
+       this.surnameInputValue = ''
+       this.phoneInputValue = ''
+       this.addressInputValue = ''
     },
     //Remove user
     removeUser() {
