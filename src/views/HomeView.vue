@@ -3,6 +3,7 @@
 
 
       <!-- Edit user modal -->
+      <Transition name="fade">
       <div class="overlay" v-if="this.openedEditModal === true">
         <div class="add-user-modal"> 
           <h3>Редактирай потребител</h3>
@@ -26,16 +27,18 @@
             <input type="text" class="input" v-model="this.addressInputValue">
           </div>
 
-          <button class="defaultBtn" @click="editUser()">Запази промените</button>
+          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="editUser()">Запази промените</button>
 
-          <button class="defaultBtn" @click="removeUser()">Изтрий потребител</button>
+          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="removeUser()">Изтрий потребител</button>
 
-          <button class="defaultBtn" @click="closeEditModal()">Отказ</button>
+          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="closeEditModal()">Отказ</button>
 
         </div>
       </div>
+      </Transition>
 
       <!-- Create user modal -->
+      <Transition name="fade">
       <div class="overlay" v-if="this.openedCreateModal === true">
         <div class="add-user-modal"> 
           <h3>Създай потребител</h3>
@@ -59,12 +62,14 @@
             <input type="text" class="input" v-model="this.addressInputValue">
           </div>
 
-          <button class="defaultBtn" @click="addUser()">Добави потребител</button>
+          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="addUser()">Добави потребител</button>
 
-          <button class="defaultBtn" @click="closeCreateModal()">Отказ</button>
+          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="closeCreateModal()">Отказ</button>
 
         </div>
       </div>
+      </Transition>
+
 
 
       <div class="table-wrapper">
@@ -74,13 +79,13 @@
       <input class="searchInput" v-model="searchUser" placeholder="Търси по име/телефон" style="margin: 20px; height: 30px; width: 200px; border: 1px solid black; border-radius: 10px;">
         <table>
           
-          <thead>
-
+          <thead>      
               <th id="one">Име</th>
               <th id="two">Фамилия</th>
               <th id="three">Телефон</th>
               <th id="four">Адрес</th>
           </thead>
+
 
 
           <tbody>
@@ -92,6 +97,7 @@
             </tr>
 
           </tbody>
+
         </table>
       </div>
 
@@ -209,6 +215,16 @@ export default {
 
 <style scoped lang="scss">
 
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s ease;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
   .table-wrapper {
     padding: 0 10px;
   }
@@ -226,7 +242,10 @@ export default {
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 15px;
+  }
+
+  h3{
+    padding: 10px;
   }
   th {
     color: white;
@@ -252,6 +271,8 @@ export default {
     color: white;
     background: #34495e;
     border: none;
+    border-radius: 10px;
+    margin-top: 20px;
     cursor: pointer;
 
     &:hover{
