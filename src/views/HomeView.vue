@@ -6,32 +6,32 @@
       <Transition name="fade">
       <div class="overlay" v-if="this.openedEditModal === true">
         <div class="add-user-modal"> 
-          <h3>Редактирай потребител</h3>
+          <h3>Edit user</h3>
           <div class="group">
-            <label class="label">Име</label>
+            <label class="label">Name</label>
             <input type="text" class="input" v-model="this.nameInputValue">
           </div>
 
           <div class="group">
-            <label class="label">Фамилия</label>
+            <label class="label">Surname</label>
             <input type="text" class="input" v-model="this.surnameInputValue">
           </div>
 
           <div class="group">
-            <label class="label">Телефон</label>
+            <label class="label">Phone</label>
             <input type="text" class="input" v-model="this.phoneInputValue">
           </div>
 
           <div class="group">
-            <label class="label">Адрес</label>
+            <label class="label">Address</label>
             <input type="text" class="input" v-model="this.addressInputValue">
           </div>
 
-          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="editUser()">Запази промените</button>
+          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="editUser()">Save changes</button>
 
-          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="removeUser()">Изтрий потребител</button>
+          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="removeUser()">Delete user</button>
 
-          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="closeEditModal()">Отказ</button>
+          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="closeEditModal()">Close</button>
 
         </div>
       </div>
@@ -41,30 +41,30 @@
       <Transition name="fade">
       <div class="overlay" v-if="this.openedCreateModal === true">
         <div class="add-user-modal"> 
-          <h3>Създай потребител</h3>
+          <h3>Create user</h3>
           <div class="group">
-            <label class="label">Име</label>
+            <label class="label">Name</label>
             <input type="text" class="input" v-model="this.nameInputValue">
           </div>
 
           <div class="group">
-            <label class="label">Фамилия</label>
+            <label class="label">Surname</label>
             <input type="text" class="input" v-model="this.surnameInputValue">
           </div>
 
           <div class="group">
-            <label class="label">Телефон</label>
+            <label class="label">Phone</label>
             <input type="text" class="input" v-model="this.phoneInputValue">
           </div>
 
           <div class="group">
-            <label class="label">Адрес</label>
+            <label class="label">Address</label>
             <input type="text" class="input" v-model="this.addressInputValue">
           </div>
 
-          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="addUser()">Добави потребител</button>
+          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="addUser()">Add user</button>
 
-          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="closeCreateModal()">Отказ</button>
+          <button class="defaultBtn" style="width: 80%; margin: auto; margin-bottom: 10px;" @click="closeCreateModal()">Close</button>
 
         </div>
       </div>
@@ -74,16 +74,16 @@
 
       <div class="table-wrapper">
 
-        <h1> Perspective web task </h1>
+        <h1> Simple phonebook </h1>
 
-      <input class="searchInput" v-model="searchUser" placeholder="Търси по име/телефон" style="margin: 20px; height: 30px; width: 200px; border: 1px solid black; border-radius: 10px;">
+        <input class="searchInput" v-model="searchUser" placeholder="Search by name/phone" style="margin: 20px; height: 30px; width: 200px; border: 1px solid black; border-radius: 10px;">
         <table>
           
           <thead>      
-              <th id="one">Име</th>
-              <th id="two">Фамилия</th>
-              <th id="three">Телефон</th>
-              <th id="four">Адрес</th>
+              <th id="one">Name</th>
+              <th id="two">Surname</th>
+              <th id="three">Phone</th>
+              <th id="four">Address</th>
           </thead>
 
 
@@ -101,7 +101,7 @@
         </table>
       </div>
 
-      <button class="defaultBtn" @click="addtUserModal()">Създай</button>
+      <button class="defaultBtn" @click="addtUserModal()">Create user</button>
 
 
   </div>
