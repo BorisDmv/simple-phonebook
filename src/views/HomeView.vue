@@ -108,6 +108,7 @@
 </template>
 
 <script>
+import store from '../store/index'
 
 export default {
   name: 'HomeView',
@@ -188,6 +189,8 @@ export default {
   //Adding users to filtered array so we can filter by name and phone
   created(){
     this.filteredPhoneBooks = this.phoneBooks
+    store.commit('addUser')
+    console.log(store.state.testUsers[3].name)
   },
   computed: {
     // Add to the games array
